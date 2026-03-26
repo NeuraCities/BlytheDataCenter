@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Blythe Energy — Data Center Opportunity Intelligence</title>
+<title>NeuraCities — Data Center Opportunity Intelligence</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1182,9 +1182,9 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   // ── Basemap: Stadia Alidade Smooth Dark (clear, no API key needed)
-  L.tileLayer('https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}{r}.png', {
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
     maxZoom: 19,
-    attribution: '&copy; <a href="https://stadiamaps.com/">Stadia Maps</a> &copy; <a href="https://openmaptiles.org/">OpenMapTiles</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+    attribution: '&copy; <a href="https://carto.com/">Carto Maps</a> &copy; <a href="https://openmaptiles.org/">OpenMapTiles</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
   }).addTo(map);
 
   // Fallback tile if Stadia not available
@@ -1195,7 +1195,7 @@ document.addEventListener('DOMContentLoaded', function () {
   // try to detect and switch
   const testImg = new Image();
   testImg.onerror = () => { map.eachLayer(l => { if(l._url && l._url.includes('stadia')) map.removeLayer(l); }); fallbackTile.addTo(map); };
-  testImg.src = 'https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/0/0/0.png';
+  testImg.src = 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png';
 
 
   /* ══════════════════════════════════════
